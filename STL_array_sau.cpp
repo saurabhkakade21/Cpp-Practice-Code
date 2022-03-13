@@ -1,14 +1,23 @@
+/*
+Class Template - Arrays
+Note: Since C++11, the STL has std::array which is a template-based array class.
+Use std::array instead of raw arrays whenever possible.
+We can have non-type template parameters. That's what N is in this case.
+
+*/
+
+
 #include <iostream>
 #include <string>
 
-template <int N>
+template <typename T,int N>
 
 class Array
 {
     int size {N};
-    int values [N];
+    T values [N];
 
-    friend std::ostream &operator << (std::ostream &os, const Array<N> &arr)
+    friend std::ostream &operator << (std::ostream &os, const Array<T,N> &arr)
     {
         os << '[';
         for(const auto &val: arr.values)
@@ -21,7 +30,7 @@ class Array
 
     public:
         Array() = default;
-        Array(int init_val)
+        Array(T init_val)
         {
             for (auto &item : values)
             {
@@ -29,7 +38,7 @@ class Array
             }
         }
 
-        void fill(int val)
+        void fill(T val)
         {
             for(auto &item:values)
             {
@@ -43,7 +52,7 @@ class Array
         }
 
         //overload the subscript operator for easy use
-        int &operator [] (int index)
+        T &operator [] (int index)
         {
             return values[index];
         }
@@ -51,7 +60,7 @@ class Array
 
 int main()
 {
-    Array<5> nums;
+    Array<int,5> nums {8};
     std::cout << "The size of nums is: " << nums.get_size() << std::endl;
     std::cout << nums << std::endl;
 
@@ -63,12 +72,20 @@ int main()
     std::cout << "The size of nums is: " << nums.get_size() << std::endl;
     std::cout << nums << std::endl;
 
-    nums[0] = 1000;
-    nums[3] = 2000;
+    nums[0] = 1000; //nums.operator[](0)
+    nums[3] = 2000; //nums.operator[](3)
     std::cout << nums << std::endl;
 
+    Array<int,100> nums2{1};
+    std::cout << "The size of nums2 is: " << nums2.get_size() << std::endl;
+    std::cout << nums2 << std::endl;
     
+    Array<std::string,100> strings(std::string("Frank"));
+    std::cout << "The size of strings is: " << strings.get_size() << std::endl;
+    std::cout << strings << std::endl;
     
-
+    strings.fill(std::string{'X'});
+    std::cout << strings << std::endl;
+    
     return 0;
 }
