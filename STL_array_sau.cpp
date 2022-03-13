@@ -75,7 +75,7 @@ int main()
     nums[0] = 1000; //nums.operator[](0)
     nums[3] = 2000; //nums.operator[](3)
     std::cout << nums << std::endl;
-
+  
     Array<int,100> nums2{1};
     std::cout << "The size of nums2 is: " << nums2.get_size() << std::endl;
     std::cout << nums2 << std::endl;
@@ -88,4 +88,4 @@ int main()
     std::cout << strings << std::endl;
     
     return 0;
-}
+} 
