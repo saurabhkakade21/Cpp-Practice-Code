@@ -71,6 +71,9 @@ void count_if_test()
 
     num = std::count_if(begin(vec),end(vec),[](int x){return x%2 != 0;});
     std::cout << num << " Odd numbers found !!" << std::endl;
+
+    num = std::count_if(begin(vec),end(vec),[](int x){return x%2 != 0;});
+    std::cout << num << " Odd numbers found !!" << std::endl;
 }
 
 int main()
@@ -79,6 +82,7 @@ int main()
     find_test_02();
     count_test();
     count_if_test();
+    //eop
     return 0;
 
 }
