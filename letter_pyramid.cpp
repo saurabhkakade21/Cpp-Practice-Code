@@ -11,7 +11,6 @@ int main()
     system("clear");
     cout << "Enter the string for letter pyramid: ";
     string input_string {};
-    // string space (input_string.length()-1,' ');
     getline(cin,input_string);
     size_t length = input_string.length();
 
@@ -22,7 +21,6 @@ int main()
         {
             cout << " ";
         }
-
         
         string str = input_string.substr(0,i+1);
         reverse(str.begin(), str.end());
