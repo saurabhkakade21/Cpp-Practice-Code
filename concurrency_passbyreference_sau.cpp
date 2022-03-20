@@ -80,7 +80,7 @@ int main()
         ~String()
     */
 
-    //pass by const reference use std::cref(argument)
+    //pass by const reference use std::cref(arg)
     std::thread thread_download(DownloadFunction, std::cref(file_argument)); 
 
     std::cout << "[Main] Step 02: Started another operation..." << std::endl;
