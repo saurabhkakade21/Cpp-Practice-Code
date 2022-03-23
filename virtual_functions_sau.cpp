@@ -3,12 +3,12 @@
 
 using namespace std;
 
-void Account::withdraw(double amount)
+void Account::withdraw(double amount) const
 {
      std::cout << "In Account class: Withdraw: " << std::endl;
 }
 
-void Checking::withdraw(double amount)
+void Checking::withdraw(double amount) const
 {
      std::cout << "In Checking class: Withdraw: " << std::endl;
 }
@@ -23,7 +23,7 @@ Checking :: ~Checking()
      cout << "Checking destructor" << endl;
 }
 
-int main()
+int main() 
 {
     Account *p1 = new Account();
     Account *p2 = new Checking();

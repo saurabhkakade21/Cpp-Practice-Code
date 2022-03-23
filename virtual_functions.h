@@ -4,7 +4,7 @@
 class Account
 {
     public:
-        virtual void withdraw(double amount);
+        virtual void withdraw(double amount) const;
         virtual ~ Account();
         
 };
@@ -12,7 +12,7 @@ class Account
 class Checking : public Account
 {
     public:
-        virtual void withdraw(double amount);
+        virtual void withdraw(double amount) const override;
         virtual ~ Checking();
 };
 
