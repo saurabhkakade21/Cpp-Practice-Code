@@ -10,19 +10,6 @@ using namespace std;
 /*Write the class AddElements here*/
 
 
-//*************
-/to improve the time performance use the following block of code.
-
-int start_up() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    return 0;
-}
-
-int static r = start_up();
-
-
-//*******************************
 template <class T>
 class AddElements
 {
@@ -43,8 +30,23 @@ class AddElements
         
 };
 
+/////////////////////////////
 
+//add this lines after you imlement your classes. 
+//The static start_up fumction speeds up cout and #define changes endl to '\n', 
+//that prevents flushing buffer for each line.
 
+int start_up() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    return 0;
+}
+
+int static r = start_up();
+
+#define endl '\n';
+
+/////////////////////////////
 
 int main () {
   int n,i;
